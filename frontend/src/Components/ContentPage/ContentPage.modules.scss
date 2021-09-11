@@ -1,0 +1,13 @@
+.ContentPage {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 10% 90%;
+    overflow-y: auto;
+    .PostGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        margin: 2.5%;
+        row-gap: 25px;
+        column-gap: 2%;
+    }
+}

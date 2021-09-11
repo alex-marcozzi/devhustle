@@ -9,7 +9,7 @@ export default function PopUp(props) {
         props.setOpen(!props.open);
     }
     return (
-        <Dialog open={props.open} onClose={handleClose}>
+        <Dialog open={props.open} onClose={handleClose} className="PopUp">
             <DialogTitle>{props.title}</DialogTitle>
             {props.children}
         </Dialog>

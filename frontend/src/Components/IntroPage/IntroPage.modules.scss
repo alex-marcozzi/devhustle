@@ -1,0 +1,17 @@
+.Body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .Caption {
+        margin: 2%;
+        .CaptionTitle {
+        }
+        .Description {
+            color: rgba($color: #000000, $alpha: 0.5);
+        }
+    }
+    img {
+        position: relative;
+    }
+}
