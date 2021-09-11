@@ -1,0 +1,9 @@
+.Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba($color: gray, $alpha: 0.75);
+    a {
+        margin: 4px;
+    }
+}
