@@ -1,3 +1,6 @@
+.Hide {
+    display: none !important;
+}
 .PostCard {
     border-radius: 10px;
     background-color: white;
@@ -13,16 +16,21 @@
     &:hover {
         box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.4),
             0 5px 25px 0 rgba(0, 0, 0, 0.4);
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
     .PostCardContent {
         height: 100%;
         display: flex;
         flex-direction: column;
-        //justify-content: center;
-        //align-items: center;
         h2 {
             margin-bottom: 0;
+        }
+        pre {
+            white-space: pre-wrap; /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
         }
         .Tags {
             display: grid;
@@ -39,6 +47,8 @@
                 margin: 8px;
                 padding: 8px 16px;
                 font-size: 12px;
+
+                overflow-x: hidden;
             }
         }
     }

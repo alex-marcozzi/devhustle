@@ -1,0 +1,17 @@
+.AddForm {
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    .MuiTextField-root {
+        margin: 8px 16px;
+    }
+    .MuiButton-root {
+        align-self: center;
+        background-color: lightgreen;
+        &:hover {
+            background-color: green;
+        }
+    }
+}

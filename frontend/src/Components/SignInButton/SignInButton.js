@@ -1,5 +1,5 @@
 import React from "react";
-// import style from "./SignInButton.modules.scss";
+import "./SignInButton.modules.scss";
 
 import GoogleLogin from "react-google-login";
 import PopUp from "../PopUp/PopUp";
@@ -16,27 +16,20 @@ const CustomButton = styled(Button)({
 export default function SignInButton() {
     const [open, setOpen] = React.useState(false);
     const { setUserInfo } = React.useContext(UserContext);
-
-    const onSuccess = (res) => {
-        console.log("Success");
-        //console.log(res.profileObj);
-        setUserInfo(res.profileObj);
-    };
     return (
         <>
             <PopUp open={open} setOpen={setOpen} title="Sign In 🔑">
                 <GoogleLogin
-                    clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENTID}
-                    buttonText="Sign In With Google"
+                    clientId="669317400509-hun6uljkr5af23a4q0srhfftmu88temd.apps.googleusercontent.com"
+                    buttonText="Sign In With Google (Dont Worries (¬_¬ ) We Just Need Your Name And Email)"
                     cookiePolicy={"single_host_origin"}
-                    uxMode="redirect"
-                    redirectUri="http://localhost:3000"
+                    // ! How do I redirect and still got data
+                    //uxMode="redirect"
+                    //redirectUri="http://localhost:3000"
                     isSignedIn={true}
                     onFailure={(err) => console.log("fail", err)}
-                    onSuccess={() => onSuccess}
+                    onSuccess={(res) => setUserInfo(res.profileObj)}
                 />
-
-                <Button>Sign In With Github</Button>
             </PopUp>
             <CustomButton variant="contained" onClick={() => setOpen(!open)}>
                 Sign In

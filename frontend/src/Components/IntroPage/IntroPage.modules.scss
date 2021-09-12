@@ -3,15 +3,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    .Caption {
-        margin: 2%;
-        .CaptionTitle {
+    .TopSection {
+        display: flex;
+        flex-direction: row;
+
+        .Caption {
+            margin: 2%;
+            .CaptionTitle {
+            }
+            .Description {
+                color: rgba($color: #000000, $alpha: 0.5);
+            }
         }
-        .Description {
-            color: rgba($color: #000000, $alpha: 0.5);
+        img {
+            position: relative;
+            width: 50%;
+            height: 50%;
         }
     }
-    img {
-        position: relative;
-    }
+    // .BotSection {
+    //     width: 100%;
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-content: center;
+    //     justify-content: space-around;
+    //     .IconStatement {
+    //     }
+    // }
 }

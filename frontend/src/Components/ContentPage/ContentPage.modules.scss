@@ -3,11 +3,25 @@
     height: 100%;
     grid-template-rows: 10% 90%;
     overflow-y: auto;
+    position: relative;
+
     .PostGrid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         margin: 2.5%;
         row-gap: 25px;
         column-gap: 2%;
+    }
+    .MuiFab-root {
+        position: fixed;
+        z-index: 99;
+        background-color: lightblue;
+        right: 0;
+        bottom: 0;
+        margin: 5%;
+        &:hover {
+            background-color: blue;
+            transform: scale(1.3);
+        }
     }
 }

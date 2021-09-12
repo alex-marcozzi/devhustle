@@ -8,7 +8,7 @@ export default function SearchBar(props) {
             <div className="SearchInput">
                 <ManageSearchIcon className="InputIcon" />
                 <input
-                    onChange={(e) => console.log(e.target.value)}
+                    onChange={(e) => props.setSearchTags(e.target.value)}
                     className="Input"
                     type="search"
                     placeholder="Search For Tags !"

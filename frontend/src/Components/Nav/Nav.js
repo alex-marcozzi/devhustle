@@ -9,38 +9,43 @@ import clsx from "clsx";
 import UserContext from "../../Context/UserContext";
 
 const navRoutes = [
-    "Looking For Projects 💻",
-    "Looking For Teammates 👨‍💻👩‍💻",
+    "Looking For Projects? 💻",
+    "Looking For Teammates? 👨‍💻👩‍💻",
     "My Posts 📜",
 ];
 
 export default function Nav() {
     const { userInfo, currPage, setCurrPage } = React.useContext(UserContext);
 
-    console.log(userInfo);
     return (
         <div className="Nav">
             <div className="Title_Logo">
                 <h2>DevHustle</h2>
                 <img src={Logo} alt="Logo" className="Logo" />
             </div>
-            <div className="Nav_Buttons">
-                <h3>Welcome </h3>
-                {navRoutes.map((route) => {
-                    return (
-                        <div
-                            className={clsx({
-                                NavRoutes: true,
-                                Selected: currPage === route,
-                            })}
-                            onClick={() => setCurrPage(route)}
-                        >
-                            {route}
-                        </div>
-                    );
-                })}
 
-                <SignInButton />
+            <div className="Nav_Buttons">
+                {userInfo !== null ? (
+                    <>
+                        <h3>Welcome {userInfo.givenName} ! </h3>
+                        {navRoutes.map((route) => {
+                            return (
+                                <div
+                                    key={route}
+                                    className={clsx({
+                                        NavRoutes: true,
+                                        Selected: currPage === route,
+                                    })}
+                                    onClick={() => setCurrPage(route)}
+                                >
+                                    {route}
+                                </div>
+                            );
+                        })}
+                    </>
+                ) : (
+                    <SignInButton />
+                )}
             </div>
         </div>
     );
