@@ -1,10 +1,12 @@
 import os
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from firebase_admin import credentials, firestore, initialize_app
 import json
 
 # Initialize Flask App
 app = Flask(__name__)
+CORS(app)
 
 # Initialize Firestore DB
 cred = credentials.Certificate('key.json')
@@ -28,6 +30,9 @@ def addCard():
         description: 'Project description goes here.'  (string),
         timezone: 'EST'  (string, should be preset choices),
         tags: ['education', 'social', 'entertainment']  (array of strings, should be preset choices)
+
+        Interest:["akasdasdsa"  ]
+        #SpamEmailModified
     }
     """
     try:
@@ -107,10 +112,10 @@ def sendEmail():
     """
 
     try:
-        to = request.json['to']
+        to = request.json['to'] 
         subject = request.json['name'] + ' wants to work together!'
-        text = request.json['text']
-        mail_ref.add({'to': to, 'message': {'subject': subject, 'text': text}})
+        html = request.json['html']
+        mail_ref.add({'to': to, 'message': {'subject': subject ,'html' : html}})
         return jsonify({"success": True}), 200
     except Exception as e:
         return f"An Error Occured: {e}"
